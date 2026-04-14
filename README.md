@@ -215,7 +215,7 @@ with DAG('sales_pipeline', schedule_interval='0 6 * * *',
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR-USERNAME/sales-pipeline-analytics.git
+git clone https://github.com/chougule03/sales-pipeline-analytics.git
 
 # 2. Generate the datasets
 pip install faker pandas psycopg2
