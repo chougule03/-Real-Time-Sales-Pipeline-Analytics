@@ -5,9 +5,10 @@
 
 ## Project Overview
 
-A production-grade, automated sales pipeline analytics system built from scratch on Windows 10/11. Raw CSV data flows through a PostgreSQL database, gets transformed by dbt SQL models, is orchestrated daily by Apache Airflow, and surfaces as a 3-page executive Power BI dashboard    all running locally and deployed to AWS.
+A production-grade, automated sales pipeline analytics system built from scratch. Raw CSV data flows through a PostgreSQL database, gets transformed by dbt SQL models, is orchestrated daily by Apache Airflow, and surfaces as a 3-page executive Power BI dashboard  all running locally and deployed to AWS. 
 
-This project demonstrates a complete analyst-to-engineer skill set: data modelling, pipeline automation, data quality testing, and business intelligence
+This project demonstrates a caoplete analyst- to - engineer skill set : data modeling , pipeline automation , data quality testing and business intelligence
+
 ---
 
 ## Architecture
