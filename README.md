@@ -192,53 +192,7 @@ with DAG('sales_pipeline', schedule_interval='0 6 * * *',
 
 ---
 
-## CV Bullet    Copy This Exactly
 
-> Built a real-time sales pipeline analytics system in Power BI processing 5,000+ deals across 5 datasets; engineered an automated dbt + Apache Airflow pipeline (scheduled daily in WSL2/Ubuntu) that transforms raw PostgreSQL data into a 3-page executive dashboard tracking revenue, win rates, and rep performance    reducing manual reporting time to zero.
-
----
-
-## Key Interview Q&A
-
-**Q: Why did you use dbt instead of writing SQL directly?**
-> dbt adds version control, testing, and documentation to SQL transformations. Every model is a `.sql` file tracked in Git. dbt also runs automated tests    for example, checking that `win_rate_pct` is always between 0 and 100, or that `deal_id` is never null. Direct SQL has none of these guarantees.
-
-**Q: Why Apache Airflow for scheduling?**
-> Airflow gives you visibility    you can see every DAG run, whether it passed or failed, and exactly which task failed. A cron job would also schedule the pipeline, but you get no UI, no retry logic, and no alerting. For a production pipeline, Airflow is the standard.
-
-**Q: What does WSL2 do and why was it needed?**
-> Apache Airflow does not run natively on Windows. WSL2 (Windows Subsystem for Linux 2) is a Microsoft feature that runs a full Ubuntu Linux environment inside Windows 10/11 with no performance overhead. All Airflow commands run inside Ubuntu; PostgreSQL and Power BI run on the Windows side and connect to each other via localhost.
-
----
-
-## How to Run This Project
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/chougule03/sales-pipeline-analytics.git
-
-# 2. Generate the datasets
-pip install faker pandas psycopg2
-python data/generate_data.py
-
-# 3. Load into PostgreSQL (Windows)
-psql -U postgres -f sql/01_create_schema.sql
-psql -U postgres -f sql/02_load_data.sql
-
-# 4. Run dbt models (inside WSL2/Ubuntu)
-cd dbt_project
-dbt deps
-dbt run
-dbt test
-
-# 5. Start Airflow (inside WSL2/Ubuntu)
-airflow scheduler &
-airflow webserver -p 8080
-
-# 6. Open Power BI
-# Connect to PostgreSQL → localhost → salesdb
-# Open sales_pipeline_dashboard.pbix
-```
 
 ---
 
