@@ -14,7 +14,7 @@ This project demonstrates a caoplete analyst- to - engineer skill set : data mod
 ## Architecture
 
 ```
-CSV Files (Faker-generated)
+CSV Files 
         │
         ▼
 PostgreSQL (raw schema)
@@ -39,7 +39,6 @@ AWS EC2 (cloud deployment)
 | Tool | Purpose |
 |---|---|
 | PostgreSQL 15 | Relational database    stores raw and transformed data |
-| Python + Faker | Generates 5 realistic synthetic datasets |
 | dbt (Data Build Tool) | SQL transformation layer    builds KPI tables, runs tests |
 | Apache Airflow | Pipeline scheduler    runs dbt automatically every morning |
 | WSL2 (Ubuntu) | Linux environment inside Windows    required for Airflow |
@@ -50,8 +49,7 @@ AWS EC2 (cloud deployment)
 ---
 
 ## Dataset
-
-All data generated using Python's **Faker** library. Represents a B2B sales organisation with realistic distributions.
+ Represents a B2B sales organisation with realistic distributions.
 
 | File | Rows | Key Columns |
 |---|---|---|
@@ -109,12 +107,11 @@ sales-pipeline-analytics/
 | Phase 0 | Requirements & setup |  30 min |
 | Phase 1 | Install WSL2 (Ubuntu inside Windows) | 30 min |
 | Phase 2 | Install & configure PostgreSQL | 30 min |
-| Phase 3 | Install Python, generate Faker datasets | 20 min |
-| Phase 4 | Load CSVs into PostgreSQL | 45 min |
-| Phase 5 | Build dbt models & tests | 2–3 hours |
-| Phase 6 | Configure Apache Airflow in WSL2 | 1–2 hours |
-| Phase 7 | Build Power BI 3-page dashboard | 3–4 hours |
-| Phase 8 | Push to GitHub | 30 min |
+| Phase 3 | Load CSVs into PostgreSQL | 45 min |
+| Phase 4 | Build dbt models & tests | 2–3 hours |
+| Phase 5 | Configure Apache Airflow in WSL2 | 1–2 hours |
+| Phase 6 | Build Power BI 3-page dashboard | 3–4 hours |
+| Phase 7 | Push to GitHub | 30 min |
 
 ---
 
